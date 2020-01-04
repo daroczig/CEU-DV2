@@ -29,7 +29,7 @@ Please bring your own laptop and make sure to install the below items **before**
 4. Enter the following commands in the R console (bottom left panel of RStudio) and make sure you see a plot in the bottom right panel and no errors in the R console:
 
 ```r
-install.packages(c('ggplot2', 'gganimate', 'transformr'))
+install.packages(c('ggplot2', 'gganimate', 'transformr', 'gifski'))
 library(ggplot2)
 library(gganimate)
 ggplot(diamonds, aes(cut)) + geom_bar() +
