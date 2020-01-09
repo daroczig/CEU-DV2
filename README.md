@@ -5,6 +5,9 @@ This is the R script repository of the "[Data Visualization 2: Practical Data Vi
 * [Syllabus](https://github.com/daroczig/CEU-DV2#syllabus)
 * [Technical Prerequisites](https://github.com/daroczig/CEU-DV2#technical-prerequisites)
 * [Class Schedule](https://github.com/daroczig/CEU-DV2#class-schedule)
+
+    * [Week 1](https://github.com/daroczig/CEU-DV2#week-1)
+
 * [Contact](https://github.com/daroczig/CEU-DV2#contacts)
 
 ## Schedule
@@ -56,6 +59,39 @@ Find more resources in Jenny Bryan's "[Happy Git and GitHub for the useR](http:/
 ## Class Schedule
 
 Will be updated from week to week.
+
+### Week 1
+
+1. Warm-up exercise and security reminder: [1.R](1.R#L1)
+2. Intro / recap on R and ggplot2 from previous courses by introducing MDS: [1.R](1.R#L12)
+3. Scaling / standardizing variables: [1.R](1.R#L72)
+4. Simpson's paradox: [1.R](1.R#L150)
+5. Intro to `data.table`: [1.R](1.R#L194)
+
+Suggested reading:
+
+* [Introduction to `data.table`](https://rdatatable.gitlab.io/data.table/articles/datatable-intro.html)
+* [`data.table` FAQ](https://rdatatable.gitlab.io/data.table/articles/datatable-faq.html)
+* [Database-like ops benchmark](https://h2oai.github.io/db-benchmark/)
+
+Homework:
+
+1. Load `bookings` data from http://bit.ly/CEU-R-hotels-2018-prices and the hotel `features` from http://bit.ly/CEU-R-hotels-2018-features
+2. Count the number of 4 stars hotels in Hungary
+3. Compute the average rating of 4 and 5 star hotels in Hungary and Germany
+4. Round up the previously computed average rating to 2 digits
+5. Do we have any bookings in unknown hotels (as per the features dataset)?
+6. Clean up the bookings dataset from bookings from unknown hotels and print the number of remaining bookings
+7. What's the average distance of hotels from the city central in Budapest
+8. List all neighbourhoods in Budapest
+9. Compute the average distance from the city center for the neighbourhoods in Budapest
+10. Count the number of bookings in Hungary
+
+Homework extra:
+
+1. Create a scatterplot on the `iris` dataset using the length and width of sepal + 4 linear models (3 colored lines per species, 1 black line fitted on the global dataset)
+
+Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 14 midnight (CET)
 
 ## Contact
 
