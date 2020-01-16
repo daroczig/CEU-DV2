@@ -93,6 +93,35 @@ Homework extra:
 
 Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 14 midnight (CET)
 
+### Week 2 
+
+1. Homework solutions [2.R](2.R#L1)
+2. Hierarchical clustering, dendograms [2.R](2.R#L49)
+3. Revisit MDS with animation [2.R](2.R#L179)
+4. Anscombe's quartett [2.R](2.R#L231)
+5. Datasaurus [2.R](2.R#L296)
+6. Geocoding and loading data from the Internet [2.R](2.R#L389)
+
+Suggested reading:
+
+* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
+* Thomas Lin Pedersen: *gganimate. A Grammar of Animated Graphics*. https://gganimate.com/
+
+Homework:
+
+0. Load the `nycflights13` package and check what kind of datasets exist in the package, then create a copy of flights dataset into a data.table object, called `flight_data`.
+1. Which destination had the lowest avg arrival delay from LGA with minimum 100 flight to that destination?
+2. Which destination's flights were the most on time (avg arrival delay closest to zero) from LGA with minimum 100 flight to that destination?
+3. Who is the manufacturer of the plane, which flights the most to CHS destination?
+4. Which airline (carrier) flow the most by distance?
+5. Plot the monthly number of flights with 20+ mins arrival delay!
+6. Plot the departure delay of flights going to IAH and the related day's wind speed on a scaterplot! Is there any association between the two variables? Try adding a linear model.
+7. Plot the airports as per their geolocation on a world map, by mapping the number flights going to that destionation to the size of the symbol!
+
+If in doubt about the results and outputs, see [this example submission prepared by Misi](https://www.dropbox.com/s/36zifeh40m7jzza/dv2-homework2.html?dl=1).
+
+Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 14 midnight (CET)
+
 ## Contact
 
 File a [GitHub ticket](https://github.com/daroczig/CEU-DV2/issues).
