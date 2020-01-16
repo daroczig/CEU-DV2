@@ -7,6 +7,7 @@ This is the R script repository of the "[Data Visualization 2: Practical Data Vi
 * [Class Schedule](https://github.com/daroczig/CEU-DV2#class-schedule)
 
     * [Week 1](https://github.com/daroczig/CEU-DV2#week-1)
+    * [Week 2](https://github.com/daroczig/CEU-DV2#week-2)
 
 * [Contact](https://github.com/daroczig/CEU-DV2#contacts)
 
