@@ -411,6 +411,7 @@ geocode('CEU, Budapest', source = 'dsk')
 ## https://github.com/dkahle/ggmap/commit/025f98af996c56cd419830073111347b2d1971f3
 ## https://cran.r-project.org/src/contrib/Archive/ggmap/
 ## install.packages('https://cran.r-project.org/src/contrib/Archive/ggmap/ggmap_2.6.2.tar.gz')
+## install.packages('ggmap', repos = 'https://cran.microsoft.com/snapshot/2019-02-01/')
 
 ## unload and then reload a package (or restart R)
 detach('package:ggmap', unload = TRUE)
