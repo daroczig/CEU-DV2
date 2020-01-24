@@ -8,6 +8,7 @@ This is the R script repository of the "[Data Visualization 2: Practical Data Vi
 
     * [Week 1](https://github.com/daroczig/CEU-DV2#week-1)
     * [Week 2](https://github.com/daroczig/CEU-DV2#week-2)
+    * [Week 3](https://github.com/daroczig/CEU-DV2#week-3)
 
 * [Contact](https://github.com/daroczig/CEU-DV2#contacts)
 
@@ -122,6 +123,23 @@ Homework:
 If in doubt about the results and outputs, see [this example submission prepared by Misi](https://www.dropbox.com/s/36zifeh40m7jzza/dv2-homework2.html?dl=1).
 
 Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 21 midnight (CET)
+
+### Week 3
+
+1. Homework solutions [3.R](3.R#L1)
+2. Alternatives to boxplot [3.R](3.R#L34)
+3. Creating new variables: numeric to factor [3.R](3.R#L76)
+4. Multiple summaries [3.R](3.R#L215)
+5. Tweaking `ggplot2` themes [3.R](3.R#L288)
+6. Introduction to interactive plots [3.R](3.R#L371)
+
+~~Homework~~Final project:
+
+Participite in the 4th week of #tidytuesday at https://github.com/rfordatascience/tidytuesday -- feel free to use the bundled `spotify_songs.csv` dataset (or provide your owndata collected from Spotify), optionally merge external dataset(s), do data transformations that seems useful and generate data visualizations that makes sense and are insightful, plus provide comments on those in plain English.
+
+Submission: prepare an R markdown document that includes plain English text description of the dataset, problem/question you analyzed, actual R code chunks (printing both the code and its output) doing the analysis, comments and summary of results and knit to HTML or PDF and upload to Moodle before Feb 16 midnight (CET). Please don't leave the submission for the last minute and be sure to submit by Feb 9 if you would like to get some feedback before the final deadline.
+
+Grading: reading the required data and doing some plots in an R Markdown document as per the above specswill get you pass, but please actually spend time on getting familiar with the data, and do a proper analysis for better grades (no hard-specs, though, but make use of your common sense).
 
 ## Contact
 
