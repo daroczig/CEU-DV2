@@ -1,24 +1,21 @@
-This is the R script repository of the "[Data Visualization 2: Practical Data Visualization with R](https://courses.ceu.edu/courses/2019-2020/data-visualization-2-practical-data-visualization-r)" course in the 2019/2020 Winter term, part of the [MSc in Business Analytics](https://courses.ceu.edu/programs/ms/master-science-business-analytics) at CEU. 
+This is the R script repository of the "[Data Visualization 2: Practical Data Visualization with R](https://courses.ceu.edu/courses/2019-2020/data-visualization-2-practical-data-visualization-r)" course in the 2019/2020 Winter term, part of the [MSc in Business Analytics](https://courses.ceu.edu/programs/ms/master-science-business-analytics) at CEU.
 
 ## Table of Contents
 
 * [Syllabus](https://github.com/daroczig/CEU-DV2#syllabus)
 * [Technical Prerequisites](https://github.com/daroczig/CEU-DV2#technical-prerequisites)
 * [Class Schedule](https://github.com/daroczig/CEU-DV2#class-schedule)
-
-    * [Week 1](https://github.com/daroczig/CEU-DV2#week-1)
-    * [Week 2](https://github.com/daroczig/CEU-DV2#week-2)
-    * [Week 3](https://github.com/daroczig/CEU-DV2#week-3)
-
 * [Contact](https://github.com/daroczig/CEU-DV2#contacts)
 
 ## Schedule
 
-3 x 2 x 100 mins on Jan 8, 15, 22:
+2 x 3 x 100 mins on March 10 and 17:
 
-* 13:30 - 15:10 session 1
-* 15:10 - 15:30 break
-* 15:30 - 17:10 session 2
+* 13:30 - 15:00 session 1
+* 15:00 - 15:30 break
+* 15:30 - 17:00 session 2
+* 17:00 - 17:30 break
+* 17:30 - 19:00 session 3
 
 ## Syllabus
 
@@ -61,85 +58,6 @@ Find more resources in Jenny Bryan's "[Happy Git and GitHub for the useR](http:/
 ## Class Schedule
 
 Will be updated from week to week.
-
-### Week 1
-
-1. Warm-up exercise and security reminder: [1.R](1.R#L1)
-2. Intro / recap on R and ggplot2 from previous courses by introducing MDS: [1.R](1.R#L12)
-3. Scaling / standardizing variables: [1.R](1.R#L72)
-4. Simpson's paradox: [1.R](1.R#L150)
-5. Intro to `data.table`: [1.R](1.R#L194)
-
-Suggested reading:
-
-* [Introduction to `data.table`](https://rdatatable.gitlab.io/data.table/articles/datatable-intro.html)
-* [`data.table` FAQ](https://rdatatable.gitlab.io/data.table/articles/datatable-faq.html)
-* [Database-like ops benchmark](https://h2oai.github.io/db-benchmark/)
-
-Homework:
-
-1. Load `bookings` data from http://bit.ly/CEU-R-hotels-2018-prices and the hotel `features` from http://bit.ly/CEU-R-hotels-2018-features
-2. Count the number of 4 stars hotels in Hungary
-3. Compute the average rating of 4 and 5 star hotels in Hungary and Germany
-4. Round up the previously computed average rating to 2 digits
-5. Do we have any bookings in unknown hotels (as per the features dataset)?
-6. Clean up the bookings dataset from bookings from unknown hotels and print the number of remaining bookings
-7. What's the average distance of hotels from the city central in Budapest
-8. List all neighbourhoods in Budapest
-9. Compute the average distance from the city center for the neighbourhoods in Budapest
-10. Count the number of bookings in Hungary
-
-Homework extra:
-
-1. Create a scatterplot on the `iris` dataset using the length and width of sepal + 4 linear models (3 colored lines per species, 1 black line fitted on the global dataset)
-
-Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 14 midnight (CET)
-
-### Week 2 
-
-1. Homework solutions [2.R](2.R#L1)
-2. Hierarchical clustering, dendograms [2.R](2.R#L49)
-3. Revisit MDS with animation [2.R](2.R#L179)
-4. Anscombe's quartett [2.R](2.R#L231)
-5. Datasaurus [2.R](2.R#L296)
-6. Geocoding and loading data from the Internet [2.R](2.R#L389)
-
-Suggested reading:
-
-* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
-* Thomas Lin Pedersen: *gganimate. A Grammar of Animated Graphics*. https://gganimate.com/
-
-Homework:
-
-0. Load the `nycflights13` package and check what kind of datasets exist in the package, then create a copy of flights dataset into a data.table object, called `flight_data`.
-1. Which destination had the lowest avg arrival delay from LGA with minimum 100 flight to that destination?
-2. Which destination's flights were the most on time (avg arrival delay closest to zero) from LGA with minimum 100 flight to that destination?
-3. Who is the manufacturer of the plane, which flights the most to CHS destination?
-4. Which airline (carrier) flow the most by distance?
-5. Plot the monthly number of flights with 20+ mins arrival delay!
-6. Plot the departure delay of flights going to IAH and the related day's wind speed on a scaterplot! Is there any association between the two variables? Try adding a linear model.
-7. Plot the airports as per their geolocation on a world map, by mapping the number flights going to that destionation to the size of the symbol!
-
-If in doubt about the results and outputs, see [this example submission prepared by Misi](https://www.dropbox.com/s/36zifeh40m7jzza/dv2-homework2.html?dl=1).
-
-Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 21 midnight (CET)
-
-### Week 3
-
-1. Homework solutions [3.R](3.R#L1)
-2. Alternatives to boxplot [3.R](3.R#L34)
-3. Creating new variables: numeric to factor [3.R](3.R#L76)
-4. Multiple summaries [3.R](3.R#L215)
-5. Tweaking `ggplot2` themes [3.R](3.R#L288)
-6. Introduction to interactive plots [3.R](3.R#L371)
-
-~~Homework~~Final project:
-
-Participite in the 4th week of #tidytuesday at https://github.com/rfordatascience/tidytuesday -- feel free to use the bundled `spotify_songs.csv` dataset (or provide your owndata collected from Spotify), optionally merge external dataset(s), do data transformations that seems useful and generate data visualizations that makes sense and are insightful, plus provide comments on those in plain English.
-
-Submission: prepare an R markdown document that includes plain English text description of the dataset, problem/question you analyzed, actual R code chunks (printing both the code and its output) doing the analysis, comments and summary of results and knit to HTML or PDF and upload to Moodle before Feb 16 midnight (CET). Please don't leave the submission for the last minute and be sure to submit by Feb 9 if you would like to get some feedback before the final deadline.
-
-Grading: reading the required data and doing some plots in an R Markdown document as per the above specswill get you pass, but please actually spend time on getting familiar with the data, and do a proper analysis for better grades (no hard-specs, though, but make use of your common sense).
 
 ## Contact
 
