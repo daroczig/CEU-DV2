@@ -1,4 +1,4 @@
-This is the R script repository of the "[Data Visualization 2: Practical Data Visualization with R](https://courses.ceu.edu/courses/2019-2020/data-visualization-2-practical-data-visualization-r)" course in the 2019/2020 Winter term, part of the [MSc in Business Analytics](https://courses.ceu.edu/programs/ms/master-science-business-analytics) at CEU.
+This is the R script repository of the "[Data Visualization 2: Practical Data Visualization with R](https://courses.ceu.edu/courses/2020-2021/data-visualization-2-practical-data-visualization-r)" course in the 2020/2021 Winter term, part of the [MSc in Business Analytics](https://courses.ceu.edu/programs/ms/master-science-business-analytics) at CEU. For the previous edition, see [2019/2020 Spring](https://github.com/daroczig/CEU-DV2/tree/2019-2020).
 
 ## Table of Contents
 
@@ -16,6 +16,10 @@ This is the R script repository of the "[Data Visualization 2: Practical Data Vi
 * 15:30 - 17:00 session 2
 * 17:00 - 17:30 break
 * 17:30 - 19:00 session 3
+
+## Location
+
+This class will take place online. Find the Zoom URL shared in Moodle.
 
 ## Syllabus
 
