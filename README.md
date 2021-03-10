@@ -5,6 +5,9 @@ This is the R script repository of the "[Data Visualization 2: Practical Data Vi
 * [Syllabus](https://github.com/daroczig/CEU-DV2#syllabus)
 * [Technical Prerequisites](https://github.com/daroczig/CEU-DV2#technical-prerequisites)
 * [Class Schedule](https://github.com/daroczig/CEU-DV2#class-schedule)
+
+    * [Week 1](https://github.com/daroczig/CEU-DV2#week-1)
+
 * [Contact](https://github.com/daroczig/CEU-DV2#contacts)
 
 ## Schedule
@@ -62,6 +65,37 @@ Find more resources in Jenny Bryan's "[Happy Git and GitHub for the useR](http:/
 ## Class Schedule
 
 Will be updated from week to week.
+
+### Week 1
+
+1. Warm-up exercise and security reminder: [1.R](1.R#L1)
+2. Intro / recap on R and ggplot2 from previous courses by introducing MDS: [1.R](1.R#L49)
+3. Scaling / standardizing variables: [1.R](1.R#L134)
+4. Simpson's paradox: [1.R](1.R#L177)
+5. Intro to `data.table`: [1.R](1.R#L234)
+6. Anscombe's quartett [2.R](1.R#L389)
+
+Suggested reading:
+
+* [Introduction to `data.table`](https://rdatatable.gitlab.io/data.table/articles/datatable-intro.html)
+* [`data.table` FAQ](https://rdatatable.gitlab.io/data.table/articles/datatable-faq.html)
+* [Database-like ops benchmark](https://h2oai.github.io/db-benchmark/)
+* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
+
+Homework:
+
+0. Load the `nycflights13` package and check what kind of datasets exist in the package, then create a copy of flights dataset into a `data.table` object, called `flight_data`.
+1. Which destination had the lowest avg arrival delay from LGA with minimum 100 flight to that destination?
+2. Which destination's flights were the most on time (avg arrival delay closest to zero) from LGA with minimum 100 flight to that destination?
+3. Who is the manufacturer of the plane, which flights the most to CHS destination?
+4. Which airline (carrier) flow the most by distance?
+5. Plot the monthly number of flights with 20+ mins arrival delay!
+6. Plot the departure delay of flights going to IAH and the related day's wind speed on a scaterplot! Is there any association between the two variables? Try adding a linear model.
+7. Plot the airports as per their geolocation on a world map, by mapping the number flights going to that destionation to the size of the symbol!
+
+If in doubt about the results and outputs, see [this example submission prepared by Misi](https://www.dropbox.com/s/36zifeh40m7jzza/dv2-homework2.html?dl=1).
+
+Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before March 10 noon (CET).
 
 ## Contact
 
