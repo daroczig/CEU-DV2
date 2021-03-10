@@ -73,7 +73,7 @@ Will be updated from week to week.
 3. Scaling / standardizing variables: [1.R](1.R#L134)
 4. Simpson's paradox: [1.R](1.R#L177)
 5. Intro to `data.table`: [1.R](1.R#L234)
-6. Anscombe's quartett [2.R](1.R#L389)
+6. Anscombe's quartett [1.R](1.R#L389)
 
 Suggested reading:
 
