@@ -7,6 +7,7 @@ This is the R script repository of the "[Data Visualization 2: Practical Data Vi
 * [Class Schedule](https://github.com/daroczig/CEU-DV2#class-schedule)
 
     * [Week 1](https://github.com/daroczig/CEU-DV2#week-1)
+    * [Week 2](https://github.com/daroczig/CEU-DV2#week-2)
 
 * [Contact](https://github.com/daroczig/CEU-DV2#contacts)
 
@@ -96,6 +97,31 @@ Homework:
 If in doubt about the results and outputs, see [this example submission prepared by Misi](https://www.dropbox.com/s/36zifeh40m7jzza/dv2-homework2.html?dl=1).
 
 Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before March 17 noon (CET).
+
+### Week 2
+
+1. Homework solutions [2.R](2.R#L1)
+2. Alternatives to boxplot [2.R](2.R#L33)
+3. Hierarchical clustering, dendograms [2.R](2.R#L74)
+4. Datasaurus [2.R](2.R#197)
+5. Multiple summaries with `data.table` [2.R](2.R#L252)
+6. Tweaking `ggplot2` themes [2.R](2.R#L339)
+7. Introduction to interactive plots [2.R](2.R#424)
+8. PCA for image processing [2.R](2.R#467)
+
+Suggested reading:
+
+* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
+* Thomas Lin Pedersen: *gganimate. A Grammar of Animated Graphics*. https://gganimate.com/
+* `data.table` cheatsheet. https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
+
+~~Homework~~Final project:
+
+Participite in the next week of #tidytuesday at https://github.com/rfordatascience/tidytuesday -- feel free to use the bundled `games.csv` dataset (or provide your own data collected elsewhere), optionally merge external dataset(s), do data transformations that seems useful and generate data visualizations that makes sense and are insightful, plus provide comments on those in plain English.
+
+Submission: prepare an R markdown document that includes plain English text description of the dataset, problem/question you analyzed, actual R code chunks (printing both the code and its output) doing the analysis, comments and summary of results and knit to HTML or PDF and upload to Moodle before April 7, 2021 midnight (CET). Please don't leave the submission for the last minute and be sure to submit by April 2, 2021 if you would like to get some feedback before the final deadline.
+
+Grading: reading the required data and doing some plots in an R Markdown document as per the above specswill get you pass, but please actually spend time on getting familiar with the data, and do a proper analysis for better grades (no hard-specs, though, but make use of your common sense).
 
 ## Contact
 
