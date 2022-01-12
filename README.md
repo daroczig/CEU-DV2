@@ -33,7 +33,7 @@ Please find in the `syllabus` folder of this repository.
 
 ## Technical Prerequisites
 
-Please bring your own laptop and make sure to install the below items **before** attending the first class:
+Please bring your own laptop* and make sure to install the below items **before** attending the first class:
 
 1. Install `R` from https://cran.r-project.org
 2. Install `RStudio Desktop` (Open Source License) from https://www.rstudio.com/products/rstudio/download
@@ -64,6 +64,53 @@ Optional steps I highly suggest to do as well before attending the class if you 
     Close this window, commit, push changes, all set.
 
 Find more resources in Jenny Bryan's "[Happy Git and GitHub for the useR](http://happygitwithr.com/)" tutorial if in doubt or [contact me](#contact).
+
+(*) If you may not be able to use your own laptop, there's a shared RStudio Server set up in AWS for you. Look up the class Slack channel for how to access, or find below the steps how the service was configured:
+
+<details><summary>💪 RStudio Server installation steps</summary>
+
+```
+echo "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" | sudo tee -a /etc/apt/sources.list.d/cran.list
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+sudo apt update && sudo apt upgrade
+sudo apt install r-base gdebi-core r-cran-ggplot2 r-cran-gganimate
+sudo apt install cargo libudunits2-dev libssl-dev libgdal-dev
+wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-2021.09.2-382-amd64.deb
+sudo gdebi rstudio-server-2021.09.2-382-amd64.deb
+```
+
+</details>
+
+<details><summary>💪 Creating users</summary>
+
+```r
+secret <- 'something super secret'
+users <- c('list', 'of', 'users')
+
+library(logger)
+library(glue)
+for (user in users) {
+
+  ## remove invalid character
+  user <- sub('@.*', '', user)
+  user <- sub('-', '_', user)
+  user <- sub('.', '_', user, fixed = TRUE)
+  user <- tolower(user)
+
+  log_info('Creating {user}')
+  system(glue("sudo adduser --disabled-password --quiet --gecos '' {user}"))
+
+  log_info('Setting password for {user}')
+  system(glue("echo '{user}:{secret}' | sudo chpasswd")) # note the single quotes + placement of sudo
+
+  log_info('Adding {user} to sudo group')
+  system(glue('sudo adduser {user} sudo'))
+
+}
+```
+
+</details>
 
 ## Class Schedule
 
