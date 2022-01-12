@@ -114,6 +114,39 @@ for (user in users) {
 
 ## Class Schedule
 
+### Week 1
+
+1. Warm-up exercise and security reminder: [1.R](1.R#L1)
+2. Intro / recap on R and ggplot2 from previous courses by introducing MDS: [1.R](1.R#L52)
+3. Scaling / standardizing variables: [1.R](1.R#L137)
+4. Simpson's paradox: [1.R](1.R#L181)
+5. Intro to `data.table`: [1.R](1.R#L238)
+6. Anscombe's quartett [1.R](1.R#L339)
+
+Suggested reading:
+
+* [Introduction to `data.table`](https://rdatatable.gitlab.io/data.table/articles/datatable-intro.html)
+* [`data.table` FAQ](https://rdatatable.gitlab.io/data.table/articles/datatable-faq.html)
+* [Database-like ops benchmark](https://h2oai.github.io/db-benchmark/)
+* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
+
+### Homework 1
+
+0. Load the `nycflights13` package and check what kind of datasets exist in the package, then create a copy of flights dataset into a `data.table` object, called `flight_data`.
+1. Which destination had the lowest avg arrival delay from LGA with minimum 100 flight to that destination?
+2. Which destination's flights were the most on time (avg arrival delay closest to zero) from LGA with minimum 100 flight to that destination?
+3. Who is the manufacturer of the plane, which flights the most to CHS destination?
+4. Which airline (carrier) flow the most by distance?
+5. Plot the monthly number of flights with 20+ mins arrival delay!
+6. Plot the departure delay of flights going to IAH and the related day's wind speed on a scaterplot! Is there any association between the two variables? Try adding a linear model.
+7. Plot the airports as per their geolocation on a world map, by mapping the number flights going to that destionation to the size of the symbol!
+
+If in doubt about the results and outputs, see [this example submission prepared by Misi](https://www.dropbox.com/s/36zifeh40m7jzza/dv2-homework2.html?dl=1).
+
+Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 19 noon (CET).
+
+### Week 2-3
+
 Will be updated from week to week.
 
 ## Contact
