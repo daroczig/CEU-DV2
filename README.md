@@ -145,7 +145,20 @@ If in doubt about the results and outputs, see [this example submission prepared
 
 Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 19 noon (CET).
 
-### Week 2-3
+### Week 2
+
+1. Homework format and solutions: [2.R](2.R#L1)
+2. Geocoding: [2.R](2.R#L44)
+3. Alternatives to boxplot: [2.R](2.R#L88)
+4. Data patterns [2.R](2.R#L129)
+5. Animations for hierarchical clustering: [2.R](2.R#L140)
+
+Suggested reading:
+
+* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
+* Thomas Lin Pedersen: *gganimate. A Grammar of Animated Graphics*. https://gganimate.com/
+
+### Week 3
 
 Will be updated from week to week.
 
