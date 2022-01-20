@@ -158,6 +158,12 @@ Suggested reading:
 * Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
 * Thomas Lin Pedersen: *gganimate. A Grammar of Animated Graphics*. https://gganimate.com/
 
+### Homework 2
+
+Replicate https://rpubs.com/daroczig-ceu/dv2-h2. Find source dataset on Moodle.
+
+Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 26 noon (CET).
+
 ### Week 3
 
 Will be updated from week to week.
