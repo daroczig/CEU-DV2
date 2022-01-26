@@ -1,4 +1,4 @@
-This is the R script repository of the "[Data Visualization 2: Practical Data Visualization with R](https://courses.ceu.edu/courses/2020-2021/data-visualization-2-practical-data-visualization-r)" course in the 2020/2021 Winter term, part of the [MSc in Business Analytics](https://courses.ceu.edu/programs/ms/master-science-business-analytics) at CEU. For the previous editions, see [2019/2020 Spring](https://github.com/daroczig/CEU-DV2/tree/2019-2020) and [2020/2021 Winter](https://github.com/daroczig/CEU-DV2/tree/2020-2019).
+This is the R script repository of the "[Data Visualization 2: Practical Data Visualization with R](https://courses.ceu.edu/courses/2020-2021/data-visualization-2-practical-data-visualization-r)" course in the 2020/2021 Winter term, part of the [MSc in Business Analytics](https://courses.ceu.edu/programs/ms/master-science-business-analytics) at CEU. For the previous editions, see [2019/2020 Spring](https://github.com/daroczig/CEU-DV2/tree/2019-2020) and [2020/2021 Winter](https://github.com/daroczig/CEU-DV2/tree/2020-2021).
 
 ## Table of Contents
 
@@ -174,6 +174,28 @@ Submission: prepare an R markdown document that includes the exercise as a regul
 6. `ggplot2` themes [3.R](3.R#L305)
 7. Interactive plots [3.R](3.R#L389)
 8. PCA demo on image processing [3.R](3.R#L429)
+
+### Final project
+
+Use any publicly accessible dataset (preferably from the TidyTuesday projects at https://github.com/rfordatascience/tidytuesday) and do data transformations that seems useful, optionally merge external datasets, generate data visualizations that makes sense and are insightful, plus provide comments on those in plain English.
+
+Submission: prepare an R markdown document that includes plain English text description of the dataset, problems/questions you analyzed, actual R code chunks (printing both the code and its output) doing the analysis, comments and summary/conclusion of the results, and knit the Rmd to HTML, then upload to Moodle before Feb 16, 2022 midnight (CET). Please don't leave the submission for the last minute, and be sure to submit by Feb 9, 2022 if you would like to get some feedback before the final deadline.
+
+Required items:
+
+* use 5 different type of plots (e.g. a scatterplot, boxplot, barchart, map etc.)
+* tweak the axis labels (e.g. add axis titles + unit of measurements), provide title and subtitle
+* get rid of the gray panel background
+* create an animation
+
+The above items with proper homework solutions from the first two weeks will result in "B" grade.
+
+For "A", please also work on the below extra items:
+
+* use `data.table`
+* add custom style to your plots by specifying non-default colors, font family, grid etc.
+* if the dataset has any spatial aspect, try to create a map (even if some geocoding is required), otherwise try to use some of the stats methods covered in the class (MDS, clustering, PCA)
+* publish your results on RPubs.com
 
 ## Contact
 
