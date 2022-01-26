@@ -166,7 +166,14 @@ Submission: prepare an R markdown document that includes the exercise as a regul
 
 ### Week 3
 
-Will be updated from week to week.
+1. Homework bonus exercise solutions: [3.R](3.R#L1)
+2. Loading and rendering shapefiles: [3.R](3.R#L67)
+3. datasaurus [3.R](3.R#L106)
+4. Creating factors from numeric variables [3.R](3.R#L161)
+5. Summaries with `data.table` [3.R](3.R#L224)
+6. `ggplot2` themes [3.R](3.R#L305)
+7. Interactive plots [3.R](3.R#L389)
+8. PCA demo on image processing [3.R](3.R#L429)
 
 ## Contact
 
