@@ -2,6 +2,7 @@ This is the R script repository of the "[Data Visualization 2: Practical Data Vi
 
 ## Table of Contents
 
+* [Schedule](https://github.com/daroczig/CEU-DV2#schedule)
 * [Syllabus](https://github.com/daroczig/CEU-DV2#syllabus)
 * [Technical Prerequisites](https://github.com/daroczig/CEU-DV2#technical-prerequisites)
 * [Class Schedule](https://github.com/daroczig/CEU-DV2#class-schedule)
