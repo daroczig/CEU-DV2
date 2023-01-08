@@ -30,6 +30,7 @@ Please find in the `syllabus` folder of this repository.
 
 Please bring your own laptop* and make sure to install the below items **before** attending the first class:
 
+0. Join the Slack channel dedicated to the class (`#ba-dv2-2022`)
 1. Install `R` from https://cran.r-project.org
 2. Install `RStudio Desktop` (Open Source License) from https://www.rstudio.com/products/rstudio/download
 3. Register an account at https://github.com
