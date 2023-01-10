@@ -117,6 +117,29 @@ for (user in users) {
 
 ## Class Schedule
 
+### Week 1
+
+1. Warm-up exercise and security reminder: [1.R](1.R#L1)
+2. Intro / recap on R and ggplot2 from previous courses by introducing MDS: [1.R](1.R#L56)
+3. Scaling / standardizing variables: [1.R](1.R#L144)
+4. Simpson's paradox: [1.R](1.R#L189)
+5. Intro to `data.table`: [1.R](1.R#L250)
+6. Geocoding: [1.R](2.R#L353)
+7. Anscombe's quartett [1.R](1.R#L391)
+
+Suggested reading:
+
+* [Introduction to `data.table`](https://rdatatable.gitlab.io/data.table/articles/datatable-intro.html)
+* [`data.table` FAQ](https://rdatatable.gitlab.io/data.table/articles/datatable-faq.html)
+* [Database-like ops benchmark](https://h2oai.github.io/db-benchmark/)
+* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
+
+### Homework
+
+Replicate https://rpubs.com/daroczig-ceu/dv2-homework-2022 (find source dataset on Moodle).
+
+Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 16 noon (CET). Publishing on RPubs and sharing that URL on Moodle is a plus.
+
 To be updated from week to week.
 
 ## Contact
