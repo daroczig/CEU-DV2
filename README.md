@@ -140,6 +140,28 @@ Replicate https://rpubs.com/daroczig-ceu/dv2-homework-2022 (find source dataset 
 
 Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 16 noon (CET). Publishing on RPubs and sharing that URL on Moodle is a plus.
 
+### Final project
+
+Use any publicly accessible dataset (preferably from the TidyTuesday projects at https://github.com/rfordatascience/tidytuesday) and do data transformations that seems useful, optionally merge external datasets, generate data visualizations that makes sense and are insightful, plus provide comments on those in plain English.
+
+Submission: prepare an R markdown document that includes plain English text description of the dataset, problems/questions you analyzed, actual R code chunks (printing both the code and its output) doing the analysis, comments and summary/conclusion of the results, and knit the Rmd to HTML, then upload to Moodle before Feb 10, 2022 midnight (CET). Please don't leave the submission for the last minute, and be sure to submit by Feb 3, 2022 if you would like to get some feedback before the final deadline.
+
+Required items:
+
+* use 5 different type of plots (e.g. a scatterplot, boxplot, barchart, map etc.)
+* tweak the axis labels (e.g. add axis titles + unit of measurements), provide title and subtitle
+* get rid of the gray panel background
+* create an animation
+
+The above items with proper homework solutions from the first two weeks will result in "B" grade.
+
+For "A", please also work on the below extra items:
+
+* use `data.table`
+* add custom style to your plots by specifying non-default colors, font family, grid etc.
+* if the dataset has any spatial aspect, try to create a map (even if some geocoding is required), otherwise try to use some of the stats methods covered in the class (MDS, clustering, PCA)
+* publish your results on RPubs.com
+
 To be updated from week to week.
 
 ## Contact
