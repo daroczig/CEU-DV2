@@ -1,3 +1,5 @@
+https://daroczig.shinyapps.io/countdown/?title=Data%20Visualization%202&subtitle=Practical%20Data%20Visualization%20with%20R&schedule=2023-01-16%2013:30:00&timezone=Europe/Vienna
+
 This is the R script repository of the "[Data Visualization 2: Practical Data Visualization with R](https://courses.ceu.edu/courses/2022-2023/data-visualization-2-practical-data-visualization-r)" course in the 2022/2023 Winter term, part of the [MSc in Business Analytics](https://courses.ceu.edu/programs/ms/master-science-business-analytics) at CEU. For the previous editions, see [2019/2020 Spring](https://github.com/daroczig/CEU-DV2/tree/2019-2020), [2020/2021 Winter](https://github.com/daroczig/CEU-DV2/tree/2020-2021), and [2020/2021 Winter](https://github.com/daroczig/CEU-DV2/tree/2021-2022).
 
 ## Table of Contents
@@ -72,10 +74,11 @@ sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_
 sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
 sudo apt update && sudo apt upgrade
 sudo apt install -y r-base gdebi-core r-cran-ggplot2 r-cran-gganimate
-sudo apt install -y cargo libudunits2-dev libssl-dev libgdal-dev
+sudo apt install -y cargo libudunits2-dev libssl-dev libgdal-dev desktop-file-utils
 sudo apt install -y r-cran-data.table r-cran-rcpp r-cran-dplyr r-cran-ggally r-cran-pander r-cran-readxl
 sudo apt install -y r-cran-ggrepel r-cran-hexbin r-cran-animation r-cran-dendextend r-cran-nbclust
-sudo apt install -y r-cran-ggmap r-cran-maps
+sudo apt install -y r-cran-ggmap r-cran-maps r-cran-devtools r-cran-ggraph r-cran-ggthemes
+sudo apt install -y r-cran-leaflet r-cran-mapproj
 wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.12.0-353-amd64.deb
 sudo gdebi rstudio-server-2022.12.0-353-amd64.deb
 # never do this in prod
@@ -140,6 +143,25 @@ Replicate https://rpubs.com/daroczig-ceu/dv2-homework-2022 (find source dataset 
 
 Submission: prepare an R markdown document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 16 noon (CET). Publishing on RPubs and sharing that URL on Moodle is a plus.
 
+### Week 2
+
+1. Homework format and solutions: [2.R](2.R#L1)
+2. Loading and rendering shapefiles: [2.R](2.R#L80)
+3. Creating factors from numeric variables [2.R](2.R#L168)
+4. Summaries with `data.table` [2.R](2.R#L233)
+5. Alternatives to boxplot: [2.R](2.R#314)
+6. Data patterns [2.R](2.R#L359)
+7. Animations for hierarchical clustering: [2.R](2.R#L370)
+8. Revisiting datasaurus [2.R](2.R#L494)
+9. `ggplot2` themes [2.R](2.R#L525)
+7. Interactive plots [2.R](2.R#L595)
+8. PCA demo on image processing [2.R](2.R#L634)
+
+Suggested reading:
+
+* Hadley Wickham: *ggplot2: Elegant Graphics for Data Analysis*. https://ggplot2-book.org/
+* Thomas Lin Pedersen: *gganimate. A Grammar of Animated Graphics*. https://gganimate.com/
+
 ### Final project
 
 Use any publicly accessible dataset (preferably from the TidyTuesday projects at https://github.com/rfordatascience/tidytuesday) and do data transformations that seems useful, optionally merge external datasets, generate data visualizations that makes sense and are insightful, plus provide comments on those in plain English.
@@ -160,7 +182,7 @@ For "A", please also work on the below extra items:
 * use `data.table`
 * add custom style to your plots by specifying non-default colors, font family, grid etc.
 * if the dataset has any spatial aspect, try to create a map (even if some geocoding is required), otherwise try to use some of the stats methods covered in the class (MDS, clustering, PCA)
-* publish your results on RPubs.com
+* publish your results on RPubs.com/Medium.
 
 To be updated from week to week.
 
