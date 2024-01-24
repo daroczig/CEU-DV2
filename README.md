@@ -124,6 +124,17 @@ for (user in users) {
 
 ## Class Schedule
 
+### Week 1
+
+1. Warm-up exercise and security reminder: [1.R](1.R#L1)
+2. Intro / recap on R and ggplot2 from previous courses by introducing MDS: [1.R](1.R#L66)
+3. Geocoding: [1.R](1.R#L156)
+4. Shapefiles: [1.R](1.R#L235)
+5. Scaling / standardizing variables: [1.R](1.R#L1356)
+6. Simpson's paradox: [1.R](1.R#L401)
+7. Anscombe's quartett [1.R](1.R#L462)
+8. Intro to datasaurus [2.R](2.R#L517)
+
 To be updated from week to week.
 
 ## Contact
