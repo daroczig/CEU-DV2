@@ -137,6 +137,21 @@ for (user in users) {
 
 To be updated from week to week.
 
+## Homework
+
+0. Load the `nycflights13` package and check what datasets are bundled.
+1. Visualize the distribution of arrival delays per origin airport!
+2. Visualize the distribution of arrival delays per destination airport! Note that the x axis labels need to be rotated, and spend some time cleaning up the axis and plot titles! Might need to tweak `fig.height` and `fig.width` params of the code chunk in Rmd!
+3. Compute and visualize the average arrival delay per destination! Make sure to handle `NA`s and order the barplot by the average delay.
+4. Redo the above plot by showing the actual name of the destination airport instead of it's FAA id!
+5. Color the bars by the timezone of the airport! Make sure to render the legend on the top, using a single line.
+6. Geocode the destination airports, then visualize those on a worldmap with the point sizes relative to the number of flights to there from NY!
+7. Compute the average departure and arrival delays, also the average air time and distance per destination, then pass the scaled dataframe through MDS to visualize the similarities/dissimilarities of the destination airports!
+
+If in doubt about what is expected and how the results and outputs should look like, see [this example solution](https://rawcdn.githack.com/daroczig/CEU-DV2/ff034e57d118cbb7e11c0fefb63c06737e8ce734/homework-solutions.html).
+
+Submission: prepare an R Markdown or Quartro document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 31 noon (CET).
+
 ## Contact
 
 File a [GitHub ticket](https://github.com/daroczig/CEU-DV2/issues).
