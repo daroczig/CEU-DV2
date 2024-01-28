@@ -133,7 +133,7 @@ for (user in users) {
 5. Scaling / standardizing variables: [1.R](1.R#L1356)
 6. Simpson's paradox: [1.R](1.R#L401)
 7. Anscombe's quartett [1.R](1.R#L462)
-8. Intro to datasaurus [2.R](2.R#L517)
+8. Intro to datasaurus [1.R](1.R#L517)
 
 To be updated from week to week.
 
