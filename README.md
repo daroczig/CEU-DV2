@@ -135,6 +135,17 @@ for (user in users) {
 7. Anscombe's quartett [1.R](1.R#L462)
 8. Intro to datasaurus [1.R](1.R#L517)
 
+### Week 2
+
+1. Review homework: [2.R](2.R#L1) and [homework-solutions.rmd](homework-solutions.rmd)
+2. Recap on `data.table` summaries: [2.R](2.R#L22)
+3. Warm-up exercises on `ggplot2` calls and EDA [2.R](2.R#L60)
+4. Extract points from a plot [2.R](2.R#L120)
+5. Hierarchical clustering [2.R](2.R#L156)
+6. Animations [2.R](2.R#L310)
+7. Themes [2.R](2.R#L384)
+8. Interactive plots [2.R](2.R#L459)
+
 To be updated from week to week.
 
 ## Homework
