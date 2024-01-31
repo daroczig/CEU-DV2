@@ -1,0 +1,114 @@
+---
+title: "CEU DV3: Example homework solutions"
+author: "Gergely Daroczi"
+date: "January 24, 2024"
+output: html_document
+---
+
+```{r suppress, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.height = 10, fig.width = 15)
+```
+
+## 0. Load the `nycflights13` package and check what datasets are bundled.
+
+
+```{r}
+library(nycflights13)
+knitr::kable(data(package = 'nycflights13')$results)
+```
+
+## 1. Visualize the distribution of arrival delays per origin airport!
+
+```{r}
+library(ggplot2)
+ggplot(flights, aes(origin, arr_delay)) + geom_boxplot()
+```
+
+## 2. Visualize the distribution of arrival delays per destination airport! Note that the x axis labels need to be rotated, and spend some time cleaning up the axis and plot titles! Might need to tweak `fig.height` and `fig.width` params of the code chunk in Rmd!
+
+```{r}
+ggplot(flights, aes(dest, arr_delay)) + geom_boxplot() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+    xlab('') + ylab('Arrival delays (minutes)') +
+    ggtitle('Flights deparing from NY in 2013')
+```
+
+## 3. Compute and visualize the average arrival delay per destination! Make sure to handle `NA`s and order the barplot by the average delay.
+
+```{r}
+library(data.table)
+dt <- data.table(flights)[, .(delay = mean(arr_delay, na.rm = TRUE)), by = dest][order(delay)]
+dt[, dest := factor(dest, levels = dest)]
+ggplot(
+    dt,
+    aes(dest, delay)) + geom_col() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+    xlab('') + ylab('Average arrival delays (minutes)') +
+    ggtitle('Flights deparing from NY in 2013')
+```
+
+## 4. Redo the above plot by showing the actual name of the destination airport instead of it's FAA id!
+
+```{r}
+dt <- merge(
+    data.table(flights),
+    data.table(airports)[, .(dest = faa, name)])
+dt <- dt[, .(delay = mean(arr_delay, na.rm = TRUE)), by = name][order(delay)]
+dt[, name := factor(name, levels = name)]
+ggplot(
+    dt,
+    aes(name, delay)) + geom_col() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+    xlab('') + ylab('Average arrival delays (minutes)') +
+    ggtitle('Flights deparing from NY in 2013')
+```
+
+## 5. Color the bars by the timezone of the airport! Make sure to render the legend on the top, using a single line.
+
+```{r}
+dt <- merge(
+    data.table(flights),
+    data.table(airports)[, .(dest = faa, name, tzone)])
+dt <- dt[, .(delay = mean(arr_delay, na.rm = TRUE)), by = .(name, tzone)][order(delay)]
+dt[, name := factor(name, levels = name)]
+ggplot(
+    dt,
+    aes(name, delay, fill = tzone)) + geom_col() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+    xlab('') + ylab('Average arrival delays (minutes)') +
+    theme(legend.position = 'top') +
+    guides(fill = guide_legend(title = 'Timezone', nrow = 1)) +
+    ggtitle('Flights deparing from NY in 2013')
+```
+
+## 6. Geocode the destination airports, then visualize those on a worldmap with the point sizes relative to the number of flights to there from NY!
+
+
+```{r}
+dt <- data.table(flights)[, .N, by = dest]
+dt[, address := paste(dest, 'airport')]
+dt <- tidygeocoder::geocode(dt, 'address')
+saveRDS(dt, '/tmp/dt.rda')
+
+world <- map_data('world')
+ggplot() +
+    geom_map(data = world, map = world, aes(long, lat, map_id = region)) +
+    geom_point(data = dt, aes(long, lat, size = N), color = 'orange') +
+    coord_fixed(1.3) +
+    theme_void()
+```
+
+## 7. Compute the average departure and arrival delays, also the average air time and distance per destination, then pass the scaled dataframe through MDS to visualize the similarities/dissimilarities of the destination airports!
+
+```{r}
+dt <- data.table(flights)[, .(
+    dep_delay = mean(dep_delay, na.rm = TRUE),
+    arr_delay = mean(arr_delay, na.rm = TRUE),
+    air_time = mean(air_time, na.rm = TRUE),
+    distance = mean(distance, na.rm = TRUE)
+), by = dest]
+mds <- as.data.frame(cmdscale(dist(scale(dt[, 2:5]))))
+mds$faa <- dt$dest
+library(ggrepel)
+ggplot(mds, aes(V1, V2, label = faa)) + geom_text_repel() + theme_void()
+```
