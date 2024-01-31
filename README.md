@@ -148,7 +148,9 @@ for (user in users) {
 
 To be updated from week to week.
 
-## Homework
+## Homeworks
+
+### Homework 1
 
 0. Load the `nycflights13` package and check what datasets are bundled.
 1. Visualize the distribution of arrival delays per origin airport!
@@ -162,6 +164,22 @@ To be updated from week to week.
 If in doubt about what is expected and how the results and outputs should look like, see [this example solution](https://rawcdn.githack.com/daroczig/CEU-DV2/ff034e57d118cbb7e11c0fefb63c06737e8ce734/homework-solutions.html).
 
 Submission: prepare an R Markdown or Quartro document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Jan 31 noon (CET).
+
+### Final project
+
+Use any publicly accessible dataset (preferably from the [TidyTuesday projects](https://github.com/rfordatascience/tidytuesday)), but if you don't feel creative, feel free to pick the [`palmerpenguins` dataset](https://allisonhorst.github.io/palmerpenguins/.) and demonstrate what you have learned in this class by generating different data visualizations that makes sense and are insightful, plus provide comments on those in plain English. This can totally be a continuation of your Intro to R submission.
+
+Required items to include in your work for grade "B":
+- at least 5 plots (with at least 3 different `ggplot2` geoms) not presented yet in any of your previous CEU projects
+- a meaningful animation using `gganimate` (instead of presenting random stuff moving around, make sure that rendering an animation for your use-case makes sense, e.g. showing how things changed over time)
+- either (1) register an account at stadiamap to fetch map tiles or (2) use shapefile(s) to present some geospatial data (e.g. points or polygons rendered on a background map)
+
+For grade "A":
+- make sure to fine-tune your plots and make those pretty by always setting proper (axis) titles, scales, custom color palettes etc.
+- define a custom theme (e.g. background color, grid, font family and color) and use that on all (or at least on most) plots
+- at least one interactive plot
+
+Submission: prepare an R Markdown or Quartro document that includes the exercise as a regular paragraph then the solution in an R code chunk (printing both the code and its output) and knit to HTML or PDF and upload to Moodle before Feb 18 midnight (CET).
 
 ## Contact
 
