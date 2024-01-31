@@ -47,6 +47,20 @@ ggplot(
     ggtitle('Flights deparing from NY in 2013')
 ```
 
+Using `reorder` without an explicit `factor` call:
+
+```{r}
+dt <- data.table(flights)[, .(delay = mean(arr_delay, na.rm = TRUE)), by = dest][order(delay)]
+ggplot(
+    dt,
+    aes(reorder(dest, delay), delay)) + geom_col() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+    xlab('') + ylab('Average arrival delays (minutes)') +
+    ggtitle('Flights deparing from NY in 2013')
+```
+
+Note that this is not a `ggplot2` trick, but using `reorder` from base R to set the factor levels on the fly instead of making it through the dataset.
+
 ## 4. Redo the above plot by showing the actual name of the destination airport instead of it's FAA id!
 
 ```{r}
