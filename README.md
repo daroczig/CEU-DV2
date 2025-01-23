@@ -141,6 +141,14 @@ for (user in users) {
 
 To be uploaded.
 
+## Homeworks
+
+### Homework 1
+
+Replicate the following document using R markdown: https://rpubs.com/daroczig-ceu/dv3-2024-hw
+
+Submission: prepare an R Markdown or Quartro document echoing all used R commands, and knit to HTML or PDF and upload to Moodle before Jan 31 noon (CET).
+
 ## Contact
 
 File a [GitHub ticket](https://github.com/daroczig/CEU-DV2/issues).
