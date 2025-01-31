@@ -1,0 +1,161 @@
+---
+title: "DV3 homework #1"
+author: "Gergely Daroczi, CEU"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: journal
+---
+
+Using the `journal` R Markdown theme 😎
+
+> No need to replicate the paragraphs with a vertical line on the left (like this paragraph), as these are instructions/hints.
+
+> Note that commands are NOT echoed in this example document, but you should always echo the R commands and keep all warnings etc.
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+
+Load the regions and zones collected by the [Spare Cores](https://sparecores.com) project from the below URLs:
+
+- https://keeper.sparecores.net/table/region
+- https://keeper.sparecores.net/table/zone
+
+> You can use the `fromJSON` function from the `jsonlite` package to parse these JSON files. Make sure to convert to `data.table` for easier filtering and aggregation later.
+
+```{r}
+library(jsonlite)
+library(data.table)
+regions <- data.table(fromJSON("https://keeper.sparecores.net/table/region"))
+zones <- data.table(fromJSON("https://keeper.sparecores.net/table/zone"))
+```
+
+The loaded data look like:
+
+```{r, echo=TRUE}
+str(regions)
+str(zones)
+```
+
+Let's count the number of regions per country, shown in desceding order:
+
+```{r}
+regions[, .N, by = country_id][order(-N)]
+```
+
+> You can pass any `data.frame` or similar tabular data to `pander::pander` to render as a HTML table instead of raw R console output.
+
+A nicer table:
+
+```{r}
+library(pander)
+pander(regions[, .N, by = country_id][order(-N)])
+```
+
+Let's show the distribution of the founding year of the regions:
+
+> Make sure to replicate the axis titles, legend position, theme etc in the below and all future plots! Try to also replicate the tiny details of the plot as well, like axis labels, and grid design.
+
+```{r}
+library(ggplot2)
+ggplot(regions[!is.na(founding_year)], aes(founding_year)) + geom_bar() +
+  xlab("") + ylab("") +
+  ggtitle("Number of datacenters by founding year",
+          subtitle = "Note that regions with unknown founding year were excluded from the plot.") +
+  theme_bw() +
+  scale_x_continuous(breaks=min(regions$founding_year, na.rm=TRUE):max(regions$founding_year, na.rm=TRUE)) +
+  theme(panel.grid.major.x=element_blank(), panel.grid.minor.x=element_blank())
+```
+
+Also showing the average founding year on the same plot:
+
+> Look into `geom_vline`.
+
+```{r}
+library(ggplot2)
+ggplot(regions[!is.na(founding_year)], aes(founding_year)) + geom_bar() +
+  xlab("") + ylab("") +
+  ggtitle("Number of datacenters by founding year",
+          subtitle = "Note that regions with unknown founding year were excluded from the plot.") +
+  theme_bw() +
+  scale_x_continuous(breaks=min(regions$founding_year, na.rm=TRUE):max(regions$founding_year, na.rm=TRUE)) +
+  theme(panel.grid.major.x=element_blank(), panel.grid.minor.x=element_blank()) +
+  geom_vline(xintercept = mean(regions$founding_year, na.rm=TRUE), color = "red", linewidth=1.5)
+```
+
+
+Now let's filter for the regions in Europe!
+
+> For this, you might need to lookup the continent of the provided country ids.
+
+```{r}
+library(countrycode)
+regions[, continent := countrycode(country_id, origin = 'iso2c', destination = 'continent'),
+        by = country_id]
+regions <- regions[continent == 'Europe']
+```
+
+After filtering, there should be `r regions[, .N]` regions left.
+
+> You can add inline R code chunks by using backquotes, followed by `r`, e.g. writing <code>&#96;r 2+2&#96;</code> will return `4`.
+
+```{r}
+regions <- merge(regions, zones[, .(zones = .N), by = region_id])
+```
+
+Let's count the number of zones per region, and merge it to the `regions` dataset. There are `r regions[zones==3, .N]` regions with 3 zones, and `r regions[zones==1, .N]` regions with a single zone. Showing this visually for each vendor:
+
+```{r}
+ggplot(regions, aes(vendor_id, fill = factor(zones))) + geom_bar() +
+    theme_bw() + xlab('') + ylab('Number of regions') +
+    scale_fill_discrete("Number of availability zones in the region") + theme(legend.position = 'top')
+
+```
+
+Now let's load a GeoJSON file on the boundaries of the European countries. You can use [`leakyMirror/map-of-europe`'s `europe.geojson`](https://raw.githubusercontent.com/leakyMirror/map-of-europe/refs/heads/master/GeoJSON/europe.geojson).
+
+```{r}
+download.file(
+  'https://raw.githubusercontent.com/leakyMirror/map-of-europe/refs/heads/master/GeoJSON/europe.geojson',
+  'europe.json')
+library(sf)
+countries <- st_read('europe.json')
+```
+
+Plotting the downloaded shapes:
+
+```{r}
+ggplot() + geom_sf(data = countries) + theme_void()
+```
+
+Now let's get a background tile for this area!
+
+> Note that we used `ggmap`'s `get_stamenmap` in the class, but I suggest switching to `maptiles`'s `get_tiles` (using the same API token), as it returns the tiles in the correct WGS84 projection that is easier to use with the other loaded datasets. You can pass the loaded GeoJSON object to `get_tiles`, use `zoom=4` and the API key. Experiment with the other parameters as well to replicate the below using `geom_spatraster_rgb` from the `tidyterra` package!
+
+```{r}
+library(maptiles)
+library(tidyterra)
+m <- get_tiles(
+  countries, crop = TRUE,
+  provider="Stadia.StamenTerrainBackground", zoom = 4,
+  apikey = "TODO")
+ggplot() + geom_spatraster_rgb(data = m) + theme_void()
+```
+
+Now let's put together all the loaded layers (background raster map, polygon on country borders, and location of regions weighted by the number of zones, using color to represent if the region is powered by green energy, and use the `shape` to also visualize the vendor)!
+
+```{r}
+ggplot() +
+  geom_spatraster_rgb(data = m) +
+  geom_sf(data = countries,
+          color = 'black',
+          fill = 'transparent',
+          linewidth = .25) +
+  geom_point(data = regions, aes(
+    lon, lat,
+    color = green_energy, size = zones, shape = vendor_id), alpha = 0.5) +
+  scale_color_manual(values = c("TRUE" = "darkgreen", "FALSE" = "darkred")) +
+  theme_void()
+```
+

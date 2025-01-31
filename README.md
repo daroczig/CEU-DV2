@@ -84,7 +84,8 @@ sudo apt install -y r-base gdebi-core r-cran-ggplot2 r-cran-gganimate \
   r-cran-ggmap r-cran-maps r-cran-devtools r-cran-ggraph r-cran-ggthemes \
   r-cran-leaflet r-cran-mapproj \
   r-cran-gtextras r-cran-datasaurus r-cran-psych r-cran-svglite \
-  r-cran-tidygeocoder
+  r-cran-tidygeocoder \
+  r-cran-ggiraph r-cran-plotly r-cran-concaveman r-cran-gifski
 # install RStudio IDE
 wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2024.12.0-467-amd64.deb
 sudo gdebi rstudio-server-*.deb
@@ -139,7 +140,13 @@ for (user in users) {
 
 ### Week 2
 
-To be uploaded.
+1. Review homework: [homework.Rmd](homework.Rmd)
+3. Warm-up exercises on `ggplot2` calls and EDA [2.R](2.R#L1)
+4. Extract points from a plot [2.R](2.R#L71)
+5. Hierarchical clustering [2.R](2.R#L107)
+6. Animations [2.R](2.R#L136)
+7. Themes [2.R](2.R#L385)
+8. Interactive plots [2.R](2.R#L460) and [2-interactive-plots.Rmd](2-interactive-plots.Rmd)
 
 ## Homeworks
 

@@ -1,0 +1,48 @@
+---
+output: html_document
+runtime: shiny
+---
+
+Static ggplot:
+
+```{r}
+library(ggplot2)
+(p <- ggplot(mtcars, aes(wt, qsec, color = factor(am))) + geom_point())
+```
+
+Plotly:
+
+```{r}
+library(plotly)
+ggplotly(p)
+```
+
+ggiraph labels:
+
+```{r}
+library(ggiraph)
+p <- ggplot(mtcars, aes(
+  x = wt,
+  y = qsec,
+  color = factor(am),
+  ## NOTE this newly added field
+  data_id = factor(gear),
+  tooltip = rownames(mtcars))) +
+  geom_point_interactive()
+girafe(ggobj = p, options = list(opts_hover(css = "fill:black;")))
+```
+
+Let's add a selector for `hp`:
+
+```{r}
+library(shiny)
+sliderInput( # or numericInput
+  'minhp', h4('Minimum horsepower'), 
+  min = min(mtcars$hp), max = max(mtcars$hp), 
+  value = 100)
+renderPlot({
+  ggplot(subset(mtcars, hp > input$minhp),
+         aes(wt, qsec, color = factor(am))) + 
+    geom_point()
+})
+```
