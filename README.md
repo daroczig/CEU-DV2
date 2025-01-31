@@ -156,6 +156,22 @@ Replicate the following document using R markdown: https://rpubs.com/daroczig-ce
 
 Submission: prepare an R Markdown or Quartro document echoing all used R commands, and knit to HTML or PDF and upload to Moodle before Jan 31 noon (CET).
 
+### Final project
+
+Use any publicly accessible dataset (preferably from the [TidyTuesday projects](https://github.com/rfordatascience/tidytuesday)), but if you don't feel creative, feel free to pick the [`palmerpenguins` dataset](https://allisonhorst.github.io/palmerpenguins/.) and demonstrate what you have learned in this class by generating different data visualizations that makes sense and are insightful, plus provide comments on those in plain English. This can totally be a continuation of your Intro to R submission.
+
+Required items to include in your work for grade "B":
+- at least 5 plots (with at least 3 different `ggplot2` geoms) not presented yet in any of your previous CEU projects
+- a meaningful animation using `gganimate` (instead of presenting random stuff moving around, make sure to create an animation that makes sense for your use-case, e.g. showing how things changed over time)
+- either (1) register an account at stadiamap to fetch map tiles or (2) use shapefile(s) to present some geospatial data (e.g. points or polygons rendered on a background map)
+
+For grade "A":
+- make sure to fine-tune your plots and make those pretty by always setting proper (axis) titles, scales, custom color palettes etc.
+- define a custom theme (e.g. background color, grid, font family and color) and use that on all (or at least on most) plots
+- include at least one interactive plot (e.g. via `plotly` or `ggigraph`)
+
+Submission: prepare an R Markdown or Quartro document (printing both the R code and its output) and knit to HTML and upload to Moodle before Feb 14 midnight (CET). Make sure to submit HTML with R code chunks and plots!
+
 ## Contact
 
 File a [GitHub ticket](https://github.com/daroczig/CEU-DV2/issues).
